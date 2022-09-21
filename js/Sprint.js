@@ -119,10 +119,12 @@ function cellClicked(El, i, j) {
 function onFlag(i,j){
   var cellEl = document.querySelector(`.cell-${i}-${j}`)
   var currCell = gBoard[i][j]
+  if (currCell.isShown) return
   gBoard[i][j].isFlagged = !gBoard[i][j].isFlagged
   if (currCell.isFlagged) cellEl.classList.add('flagged')
   if (!currCell.isFlagged) cellEl.classList.remove('flagged')
 }
+
 
 var tableEl=document.querySelector('.tableEl')
 tableEl.addEventListener("contextmenu", e => e.preventDefault())
