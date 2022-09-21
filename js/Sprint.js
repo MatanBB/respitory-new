@@ -45,7 +45,7 @@ function renderBoard(gBoard) {
     for (var j = 0; j < gBoard[0].length; j++) {
       var currCount = countNegsAround(gBoard, i, j)
       if (gBoard[i][j].isMine === true) {
-        strHTML += `<td class= "cell cell-${i}-${j} hidden" onClick="cellClicked(this,${i},${j})">${MINE}</td>\n`
+        strHTML += `<td class= "cell cell-${i}-${j} hidden" onclick="cellClicked(this,${i},${j})" oncontextmenu="onFlag(${i},${j})">${MINE}</td>\n`
       } else strHTML += `<td class= "cell cell-${i}-${j} hidden" onclick="cellClicked(this,${i},${j})" oncontextmenu="onFlag(${i},${j})">${countNegsAround(gBoard, i, j)}</td>\n`
     }
     strHTML += '<tr/>'
