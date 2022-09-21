@@ -101,7 +101,7 @@ function countUp() {
 function cellClicked(El, i, j) {
   var timerEl = document.querySelector('.timerEl')
   var cellEl = document.querySelector(`.cell-${i}-${j}`)
-  if(gBoard[i][j].isFlagged) return
+  if(gBoard[i][j].isFlagged||!gGame.isOn) return
   if (cellEl.classList.contains('hidden')) {
     cellEl.classList.remove('hidden')
     gBoard[i][j].isShown = true
