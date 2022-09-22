@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/Sprint.css">
   </head>
-  <body onload="InitGame()">
+  <body onload="InitGame()" class="nohighlights">
+    <h1 class="gameResult fullyHidden">-</h1>
     <div class="GameEl">
       <h1 class="titleEl">MineSweeper</h1>
       <div class="gameEls">
@@ -19,6 +20,11 @@
       </div>
       <table class="tableEl">
       </table>
+      <div class="lvlBtns">
+        <button class="Btn easyBtn" onclick="easyBtn()">Easy</button>
+      <button class="Btn mediumBtn" onclick="mediumBtn()">Intermediate</button>
+      <button class="Btn expertBtn" onclick="expertBtn()">Expert</button>
+      </div>
     </div>
     <script src="js/Sprint.js" async defer></script>
     <script src="js/utils.js" async defer></script>

@@ -1,60 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-body{
+body {
   background-image: url('backGround.jpg');
+  background-color: rgba(0, 0, 0, 0.8);
   background-size: cover;
+  background-blend-mode: darken;
 }
 
-.GameEl{
-  border:2px solid rgb(142, 145, 238);
+.nohighlights {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.lvlBtns{
+  margin-left: 8.5%;
+  margin-top: 6%;
+}
+
+.Btn{
+  margin-left: 8%;
+  width: 105px;
+  height: 30px;
+  text-align: center;
+  font-size: 11px;
+  border: 1px solid blue;
+  cursor: pointer;
+  border-radius: 7px;
+  font-family: 'Bungee Spice', cursive;
+  background-color: rgb(83, 83, 235);
+  transition: background-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.Btn:hover{
+  background-color: rgb(240, 210, 153);
+  border-color: rgb(241, 67, 67);
+}
+
+.GameEl {
+  border: 2px solid rgb(142, 145, 238);
   box-shadow: 0px 0px 5px;
   height: 600px;
   width: 600px;
   margin: auto;
-  margin-top: 10%;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 7%, rgba(0,212,255,1) 100%);
-
+  margin-top: 2%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 1) 7%, rgba(0, 212, 255, 1) 100%);
 }
-.gameEls{
-  margin-top: 6%;
+
+.gameEls {
+  margin-top: 4%;
   font-size: 24px;
   border: none;
-  margin-left:12% ;
+  margin-left: 12%;
   margin-bottom: 40px;
 }
-h1{
-  font-family: 'Bungee Spice', cursive; 
+
+.titleEl {
+  font-family: 'Bungee Spice', cursive;
   width: 100%;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(117,49,75,1) 18%, rgba(0,212,255,1) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(117, 49, 75, 1) 18%, rgba(0, 212, 255, 1) 100%);
   margin-top: 10%;
   text-align: center;
   font-size: 40px;
   box-shadow: 0px 0px 3px;
 }
 
-.restartBtn{
-  border: 1px solid grey;
-  padding: 5px 10px;
-  padding-bottom: 10px;
+.restartBtn {
+  border: 1px solid black;
   text-align: center;
+  background-color: white;
+  padding-right: 39px;
   font-size: 24px;
-  border-radius: 4px;
+  width: 40px;
+  border-radius: 10px;
   cursor: pointer;
-  margin-left: 21%;
+  margin-left: 22%;
 }
 
 .restartBtn:hover{
-  border-color: black ;
+  background-color: rgb(223, 210, 210);
+}
+.scoreEl {
+  margin-left: 18%;
 }
 
-.scoreEl{
-  margin-left:18% ;
-}
-
-.timerEl{
+.timerEl {
   display: inline-block;
   width: 80px;
   text-align: center;
@@ -64,14 +101,14 @@ h1{
   border: 1px dashed rgb(162, 80, 80);
 }
 
-.tableEl{
+.tableEl {
   font-family: 'Bungee Spice', cursive;
   margin-top: 50px;
   margin: auto;
   background-color: rgb(82, 80, 80);
 }
 
-td{
+td {
   display: inline-block;
   cursor: pointer;
   border: 2px solid gray;
@@ -83,23 +120,61 @@ td{
   background-color: white;
 }
 
+.tdExpert {
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid gray;
+  text-align: center;
+  height: 13px;
+  width: 13px;
+  margin: 3px;
+  font-size: 7px;
+  background-color: white;
+}
 
-td:hover{
-  border-color: black ;
+
+td:hover {
+  border-color: black;
   background-color: rgb(223, 220, 217);
 }
 
-.hidden{
+.hidden {
   text-align: center;
   color: transparent;
   background-color: rgb(126, 121, 121);
 }
 
-.flagged{
+.fullyHidden {
+  opacity: 0;
+}
+
+.notDisplayed{
+  display: none;
+}
+
+.flagged {
   text-align: center;
   background-image: url('flag.jpg');
   background-size: cover;
 }
-/* .fullyHidden{
-  opacity: 0;
-} */
+
+.revealMine {
+  background-color: rgb(126, 121, 121);
+  text-align: center;
+}
+
+.gameResult {
+  transition: opacity 0.5s;
+  font-family: 'Luckiest Guy', cursive;
+  margin-top: 3%;
+  font-size: 50px;
+  background: #AFCF11;
+  background: linear-gradient(to right, #AFCF11 34%, #CF2155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  width: fit-content;
+  margin-left: 40%;
+  border-radius: 10px;
+  letter-spacing:6px;
+}
