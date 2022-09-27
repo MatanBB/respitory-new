@@ -11,15 +11,25 @@
   </head>
   <body onload="InitGame()" class="nohighlights">
     <h1 class="gameResult fullyHidden">-</h1>
+    <div class="gameHints">
+      <button class="hintsBtn" onclick="onHint() ;startClock()">HINT</button>
+      <p class="hintsEl"></p>
+    </div>
     <div class="GameEl">
-      <h1 class="titleEl">MineSweeper</h1>
+      <div class="bestScoreEl"></div>
+      <h1 class="titleEl flicker-4">MineSweeper</h1>
       <div class="gameEls">
-        <span class="timerEl">-</span>
+        <span class="timerEl">0</span>
         <button class="restartBtn" onClick="onRestart()">🙂</button>
-        <span class="scoreEl"></span>
+        <p class="scoreEl heartbeat"><p>
       </div>
       <table class="tableEl">
       </table>
+      <div class="lvlBtns">
+       <button class="Btns safeClickBtn" onclick="onSafeClick()">Safe clicks: <span class="safeClicksLeft">3</span></button>
+       <!-- <button class="Btns undoBtn" onclick="undo()">Undo</button>
+       <button class="Btns megaHintBtn" onclick="Onboom()">7BOOM</button> -->
+      </div>
       <div class="lvlBtns">
         <button class="Btn easyBtn" onclick="easyBtn()">Easy</button>
       <button class="Btn mediumBtn" onclick="mediumBtn()">Intermediate</button>
